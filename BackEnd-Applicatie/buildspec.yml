@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10 # (1)
+    commands:
+      - npm install  # (2)
+artifacts:
+  files:
+    - server.js
+    - db.js
+    - routes.js
+    - models/*
+    - package.json
+    - swagger.json
+    - docker-compose.yml
+    - Dockerfile
+    - node_modules/**/*

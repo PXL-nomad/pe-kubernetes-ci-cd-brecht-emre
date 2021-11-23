@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">name</th>
+        <th scope="col">age</th>
+        <th scope="col">group</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of students$ | async; let i=index">
+        <th scope="row">{{i}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td>
+        <td><button type="button" class="btn btn-info" [routerLink]="['/groups',item.group]">{{item.group}}</button></td>
+      </tr>
+    </tbody>
+  </table>

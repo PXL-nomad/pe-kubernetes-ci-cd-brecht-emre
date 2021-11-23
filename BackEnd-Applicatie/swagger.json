@@ -1,0 +1,163 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "This is the Student API used in the course 2TIN Devops at PXL Digital.",
+      "version": "1.0.0",
+      "title": "Swagger Student API",
+      "contact": {
+        "email": "dries.swinnen@pxl.be"
+      }
+    },
+    "host": "devops-api-pxl.herokuapp.com",
+    "basePath": "/api",
+    "tags": [
+      {
+        "name": "Students",
+        "description": "student endpoint for our API"
+      }
+    ],
+    "schemes": [
+      "http",
+      "https"
+    ],
+    "paths": {
+      "/students": {
+        "post": {
+          "tags": [
+            "students"
+          ],
+          "summary": "Add a new student to the database",
+          "security": [
+            {
+              "ApiKeyAuth": []
+            }
+          ],
+          "description": "",
+          "operationId": "addStudent",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Student object that needs to be added to the database",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Student"
+              }
+            }
+          ],
+          "responses": {
+            "401": {
+              "description": "Unauthorized"
+            },
+            "400": {
+                "description": "JSON syntax error"
+              }
+          }
+        },
+        "get": {
+            "tags": [
+              "students"
+            ],
+            "summary": "Get all students from the database",
+            "security": [
+              {
+                "ApiKeyAuth": []
+              }
+            ],
+            "description": "",
+            "operationId": "getStudents",
+            "consumes": [
+              "application/json"
+            ],
+            "produces": [
+              "application/json"
+            ],
+            "parameters": [
+            ],
+            "responses": {
+              "401": {
+                "description": "Unauthorized"
+              },
+              "400": {
+                  "description": "JSON syntax error"
+                }
+            }
+          }
+      },
+      "/students/{id}": {
+        "get": {
+          "tags": [
+            "students"
+          ],
+          "summary": "Finds Student by ID",
+          "security": [
+            {
+              "ApiKeyAuth": []
+            }
+          ],
+          "description": "",
+          "operationId": "findStudentById",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID hash from the student object",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Student"
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid status value"
+            }
+          }
+        }
+      }
+    },
+    "securityDefinitions": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "name": "key",
+        "in": "header"
+      }
+    },
+    "definitions": {
+      "Student": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "group": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "externalDocs": {
+      "description": "Find out more about Swagger",
+      "url": "http://swagger.io"
+    }
+  }
