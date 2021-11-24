@@ -7,9 +7,10 @@ services:
     environment:
       - PORT=8080
       - APIKEY=2TINDEVOPS
-      - CONNECTIONSTRING=mongodb://mongo:27017/test
+      - CONNECTIONSTRING=mongodb://mongo:27017/devops
     depends_on:
       - mongo
+    restart: always
   mongo:
     image: mongo
     ports:
