@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: vincent
+Build-Jdk: 11.0.13
+Extension-Name: kubernetes
+Specification-Title: Jenkins plugin to run dynamic agents in a Kuberne
+ tes cluster
+Implementation-Title: kubernetes
+Implementation-Version: 1.30.11
+Group-Id: org.csanchez.jenkins.plugins
+Short-Name: kubernetes
+Long-Name: Kubernetes plugin
+Url: https://github.com/jenkinsci/kubernetes-plugin
+Minimum-Java-Version: 1.8
+Plugin-Version: 1.30.11
+Hudson-Version: 2.263.1
+Jenkins-Version: 2.263.1
+Plugin-Dependencies: caffeine-api:2.9.2-29.v717aac953ff3,workflow-api:
+ 2.47,workflow-cps:2.94;resolution:=optional,workflow-step-api:2.24,au
+ thentication-tokens:1.4,cloudbees-folder:6.16,credentials-binding:1.2
+ 7,credentials:2.6.1,durable-task:1.37,jackson2-api:2.13.0-230.v59243c
+ 64b0a5,kubernetes-client-api:5.4.1,metrics:4.0.2.8,plain-credentials:
+ 1.7,structs:1.23,variant:1.4,kubernetes-credentials:0.9.0,pipeline-mo
+ del-extensions:1.9.2;resolution:=optional
+Plugin-Developers: Carlos Sanchez:carlos:carlos@apache.org
+Plugin-License-Name: Apache License 2.0
+Plugin-License-Url: https://www.apache.org/licenses/LICENSE-2.0
+Plugin-ScmUrl: https://github.com/jenkinsci/kubernetes-plugin
+
