@@ -29,7 +29,7 @@ podTemplate(yaml: '''
   node(POD_LABEL) {
 
     stage('Angular: Retrieve project') {
-      git url: 'https://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@github.com/PXL-nomad/pe-kubernetes-ci-cd-brecht-emre.git', branch: 'main'
+      git url: 'https://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@github.com/PXL-nomad/pe-kubernetes-ci-cd-brecht-emre', branch: 'main'
       container('angular') {
         stage('Angular: Build project') {
         //   sh '''
