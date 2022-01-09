@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
-const uri = process.env.MONGODB_URI || 'mongodb://localhost/devopsapi';
+const uri = process.env.CONNECTIONSTRING || 'mongodb://localhost/devopsapi';
 
-const db = mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
-
-module.exports = db;
+(async () => {
+    try {
+      const db = await mongoose.connect(uri);
+      console.log("Db connected to", db.connection.name);
+    } catch (error) {
+      console.error(error);
+    }
+  })();

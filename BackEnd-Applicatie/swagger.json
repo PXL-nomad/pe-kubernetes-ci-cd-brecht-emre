@@ -8,7 +8,7 @@
         "email": "dries.swinnen@pxl.be"
       }
     },
-    "host": "devops-api-pxl.herokuapp.com",
+    "host": "api.dubbadub.be",
     "basePath": "/api",
     "tags": [
       {
